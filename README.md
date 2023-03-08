@@ -1,4 +1,4 @@
-## `Py Assistant`
+## `PyAssistant`
 
 <hr>
 
