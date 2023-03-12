@@ -29,6 +29,18 @@ def get():
         x=[]
     return x
 
+# System Info
+def info():
+    system_name = platform.system()
+    node_name = platform.node()
+    processor_name = platform.processor()
+    python_version = platform.python_version()
+
+    print(f"System Name: {system_name}")
+    print(f"Node Name: {node_name}")
+    print(f"Processor Name: {processor_name}")
+    print(f"Python Version: {python_version}")
+
 
 # Commands
 @click.command()
@@ -45,6 +57,12 @@ def assistant(c):
         click.secho("- Feteching IP", fg="red", bold=True)
 
         get()
+
+    elif c == "sys-info":
+        click.secho(f"{datetime.datetime.now()}", fg="blue", bold=True)
+        click.secho("- Fetching System Information", fg="red", bold=True)
+
+        info()
 
     else:
         click.secho(f"{datetime.datetime.now()}", fg="blue", bold=True)
